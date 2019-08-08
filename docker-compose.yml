@@ -1,0 +1,9 @@
+phpfpm:
+  image: "registry.cn-hangzhou.aliyuncs.com/phpfpm/phpfpm-front"
+  volumes:
+   - ./:/var/www/html/
+  cap_add:
+   - SYS_PTRACE
+  environment:
+   - APP_ENV=dev
+  container_name: sdk-sample-phpfpm
