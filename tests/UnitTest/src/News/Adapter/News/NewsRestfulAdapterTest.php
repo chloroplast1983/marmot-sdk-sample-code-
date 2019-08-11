@@ -148,7 +148,7 @@ class NewsRestfulAdapterTest extends TestCase
         
         $this->prepareNewsTranslator(
             $news,
-            array('title', 'source', 'content','image','attachments'),
+            array('title', 'source', 'content', 'image', 'attachments', 'publishUserGroup'),
             $newsArray
         );
 
@@ -168,7 +168,7 @@ class NewsRestfulAdapterTest extends TestCase
         
         $this->prepareNewsTranslator(
             $news,
-            array('title', 'source', 'content','image','attachments'),
+            array('title', 'source', 'content', 'image', 'attachments', 'publishUserGroup'),
             $newsArray
         );
 
@@ -188,7 +188,7 @@ class NewsRestfulAdapterTest extends TestCase
         
         $this->prepareNewsTranslator(
             $news,
-            array('title', 'source', 'content','image','attachments'),
+            array('title', 'source', 'content', 'image', 'attachments'),
             $newsArray
         );
 
@@ -208,7 +208,7 @@ class NewsRestfulAdapterTest extends TestCase
         
         $this->prepareNewsTranslator(
             $news,
-            array('title', 'source', 'content','image','attachments'),
+            array('title', 'source', 'content', 'image', 'attachments'),
             $newsArray
         );
 

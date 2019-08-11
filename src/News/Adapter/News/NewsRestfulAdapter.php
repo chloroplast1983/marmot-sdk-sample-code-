@@ -73,7 +73,7 @@ class NewsRestfulAdapter extends GuzzleAdapter implements INewsAdapter
     {
         $data = $this->getTranslator()->objectToArray(
             $news,
-            array('title', 'source', 'content', 'image', 'attachments')
+            array('title', 'source', 'content', 'image', 'attachments', 'publishUserGroup')
         );
         
         $this->post(
