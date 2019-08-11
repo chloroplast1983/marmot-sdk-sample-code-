@@ -1,21 +1,19 @@
 <?php
-namespace Common\Adapter;
+namespace Sdk\Common\Adapter;
 
 use PHPUnit\Framework\TestCase;
 
 class AsyncFetchAbleRestfulAdapterTraitTest extends TestCase
 {
     private $stub;
+
     private $childStub;
 
     public function setUp()
     {
         $this->stub = $this->getMockBuilder(TestAsyncFetchAbleRestfulAdapter::class)
-            ->setMethods(
-                [
-                    'getAsync',
-                ]
-            )->getMock();
+                    ->setMethods(['getAsync',])->getMock();
+
         $this->childStub = new class extends TestAsyncFetchAbleRestfulAdapter
         {
             public function fetchOneAsyncAction(int $id)
@@ -48,11 +46,8 @@ class AsyncFetchAbleRestfulAdapterTraitTest extends TestCase
     public function testFetchOneAsync()
     {
         $this->stub = $this->getMockBuilder(TestAsyncFetchAbleRestfulAdapter::class)
-            ->setMethods(
-                [
-                    'fetchOneAsyncAction'
-                ]
-            )->getMock();
+                    ->setMethods(['fetchOneAsyncAction'])->getMock();
+
         $id = 1;
         $array = [1,2];
 

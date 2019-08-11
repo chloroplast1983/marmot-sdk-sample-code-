@@ -1,11 +1,11 @@
 <?php
-namespace News\Model;
+namespace Sdk\News\Model;
 
 use Marmot\Core;
 use Marmot\Framework\Interfaces\INull;
 
-use Common\Model\NullOperatAbleTrait;
-use Common\Model\NullEnableAbleTrait;
+use Sdk\Common\Model\NullOperatAbleTrait;
+use Sdk\Common\Model\NullEnableAbleTrait;
 
 class NullNews extends News implements INull
 {

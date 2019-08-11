@@ -1,7 +1,7 @@
 <?php
-namespace Common\Adapter;
+namespace Sdk\Common\Adapter;
 
-use Common\Model\IOperatAble;
+use Sdk\Common\Model\IOperatAble;
 
 interface IOperatAbleAdapter
 {

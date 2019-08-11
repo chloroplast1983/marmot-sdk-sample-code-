@@ -1,7 +1,7 @@
 <?php
-namespace News\Utils;
+namespace Sdk\News\Utils;
 
-use News\Model\News;
+use Sdk\News\Model\News;
 
 class ObjectGenerate
 {
@@ -47,7 +47,7 @@ class ObjectGenerate
         //$publishUserGroup
         $publishUserGroup =
             isset($value['publishUserGroup']) ?
-                $value['publishUserGroup'] : \UserGroup\Utils\ObjectGenerate::generateUserGroup(1, 1);
+                $value['publishUserGroup'] : \Sdk\UserGroup\Utils\ObjectGenerate::generateUserGroup(1, 1);
         $news->setPublishUserGroup($publishUserGroup);
 
         //status

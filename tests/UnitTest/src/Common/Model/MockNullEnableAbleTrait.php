@@ -1,5 +1,5 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
 class MockNullEnableAbleTrait
 {

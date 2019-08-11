@@ -1,10 +1,10 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Common\Adapter\IOperatAbleAdapter;
+use Sdk\Common\Adapter\IOperatAbleAdapter;
 
 class OperatAbleTraitTest extends TestCase
 {
@@ -25,9 +25,7 @@ class OperatAbleTraitTest extends TestCase
     public function testAdd()
     {
         $operatAbleAdapter = $this->prophesize(IOperatAbleAdapter::class);
-
         $operatAbleAdapter->add(Argument::exact($this->trait))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->trait->expects($this->exactly(1))
             ->method('getIOperatAbleAdapter')
             ->willReturn($operatAbleAdapter->reveal());
@@ -40,7 +38,6 @@ class OperatAbleTraitTest extends TestCase
     {
         $operatAbleAdapter = $this->prophesize(IOperatAbleAdapter::class);
         $operatAbleAdapter->edit(Argument::exact($this->trait))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->trait->expects($this->exactly(1))
             ->method('getIOperatAbleAdapter')
             ->willReturn($operatAbleAdapter->reveal());

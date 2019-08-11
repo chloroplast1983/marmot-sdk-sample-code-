@@ -1,5 +1,5 @@
 <?php
-namespace Common\Adapter;
+namespace Sdk\Common\Adapter;
 
 interface IFetchAbleAdapter
 {

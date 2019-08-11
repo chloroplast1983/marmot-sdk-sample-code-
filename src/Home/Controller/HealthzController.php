@@ -1,5 +1,5 @@
 <?php
-namespace Home\Controller;
+namespace Sdk\Home\Controller;
 
 use Marmot\Framework\Classes\Controller;
 use Marmot\Framework\Controller\JsonApiTrait;

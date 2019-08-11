@@ -1,9 +1,9 @@
 <?php
-namespace News\Adapter\News;
+namespace Sdk\News\Adapter\News;
 
-use Common\Adapter\IEnableAbleAdapter;
-use Common\Adapter\IFetchAbleAdapter;
-use Common\Adapter\IOperatAbleAdapter;
+use Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sdk\Common\Adapter\IFetchAbleAdapter;
+use Sdk\Common\Adapter\IOperatAbleAdapter;
 
 use Marmot\Framework\Interfaces\IAsyncAdapter;
 

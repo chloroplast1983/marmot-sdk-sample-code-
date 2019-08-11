@@ -1,7 +1,7 @@
 <?php
-namespace Common\Repository;
+namespace Sdk\Common\Repository;
 
-use Common\Model\IEnableAble;
+use Sdk\Common\Model\IEnableAble;
 
 trait EnableAbleRepositoryTrait
 {

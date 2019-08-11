@@ -1,7 +1,7 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
-use Common\Adapter\IOperatAbleAdapter;
+use Sdk\Common\Adapter\IOperatAbleAdapter;
 
 trait OperatAbleTrait
 {

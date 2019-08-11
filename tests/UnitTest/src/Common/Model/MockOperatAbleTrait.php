@@ -1,7 +1,7 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
-use Common\Adapter\IOperatAbleAdapter;
+use Sdk\Common\Adapter\IOperatAbleAdapter;
 
 class MockOperatAbleTrait implements IOperatAble
 {
@@ -15,6 +15,7 @@ class MockOperatAbleTrait implements IOperatAble
             {
                 return false;
             }
+            
             public function edit() : bool
             {
                 return false;

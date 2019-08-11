@@ -1,7 +1,9 @@
 <?php
-namespace Common\Adapter;
+namespace Sdk\Common\Adapter;
 
 use PHPUnit\Framework\TestCase;
+
+use Sdk\News\Utils\ObjectGenerate;
 
 class OperatAbleRestfulAdapterTraitTest extends TestCase
 {
@@ -19,7 +21,7 @@ class OperatAbleRestfulAdapterTraitTest extends TestCase
 
     public function testAdd()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $this->stub->expects($this->any())
              ->method('addAction')
@@ -31,7 +33,7 @@ class OperatAbleRestfulAdapterTraitTest extends TestCase
 
     public function testEdit()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $this->stub->expects($this->any())
              ->method('editAction')

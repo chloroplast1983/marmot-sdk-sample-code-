@@ -1,18 +1,18 @@
 <?php
-namespace News\Adapter\News;
+namespace Sdk\News\Adapter\News;
 
 use Marmot\Core;
-use Marmot\Framework\Interfaces\ITranslator;
+use Marmot\Framework\Interfaces\IRestfulTranslator;
 use Marmot\Framework\Adapter\Restful\GuzzleAdapter;
 
-use Common\Adapter\EnableAbleRestfulAdapterTrait;
-use Common\Adapter\FetchAbleRestfulAdapterTrait;
-use Common\Adapter\OperatAbleRestfulAdapterTrait;
-use Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
+use Sdk\Common\Adapter\EnableAbleRestfulAdapterTrait;
+use Sdk\Common\Adapter\FetchAbleRestfulAdapterTrait;
+use Sdk\Common\Adapter\OperatAbleRestfulAdapterTrait;
+use Sdk\Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
 
-use News\Model\News;
-use News\Model\NullNews;
-use News\Translator\NewsRestfulTranslator;
+use Sdk\News\Model\News;
+use Sdk\News\Model\NullNews;
+use Sdk\News\Translator\NewsRestfulTranslator;
 
 class NewsRestfulAdapter extends GuzzleAdapter implements INewsAdapter
 {
@@ -49,7 +49,7 @@ class NewsRestfulAdapter extends GuzzleAdapter implements INewsAdapter
         $this->scenario = array();
     }
 
-    protected function getTranslator() : ITranslator
+    protected function getTranslator() : IRestfulTranslator
     {
         return $this->translator;
     }

@@ -1,10 +1,10 @@
 <?php
-namespace UserGroup\Repository\UserGroup;
+namespace Sdk\UserGroup\Repository\UserGroup;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter;
+use Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter;
 
 class UserGroupRepositoryTest extends TestCase
 {
@@ -15,10 +15,11 @@ class UserGroupRepositoryTest extends TestCase
     public function setUp()
     {
         $this->stub = $this->getMockBuilder(UserGroupRepository::class)
-            ->setMethods(['getAdapter'])
-            ->getMock();
+                    ->setMethods(['getAdapter'])
+                    ->getMock();
 
-        $this->childStub = new class extends UserGroupRepository {
+        $this->childStub = new class extends UserGroupRepository
+        {
             public function getAdapter() : UserGroupRestfulAdapter
             {
                 return parent::getAdapter();
@@ -35,7 +36,7 @@ class UserGroupRepositoryTest extends TestCase
     public function testGetAdapter()
     {
         $this->assertInstanceOf(
-            'UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter',
+            'Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter',
             $this->childStub->getAdapter()
         );
     }
@@ -49,7 +50,6 @@ class UserGroupRepositoryTest extends TestCase
             ->willReturn($adapter->reveal());
             
         $result = $this->stub->scenario(UserGroupRepository::LIST_MODEL_UN);
-
         $this->assertEquals($this->stub, $result);
     }
 }

@@ -1,13 +1,12 @@
 <?php
-namespace UserGroup\Adapter\UserGroup;
+namespace Sdk\UserGroup\Adapter\UserGroup;
 
-use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Marmot\Framework\Interfaces\ITranslator;
+use Marmot\Framework\Interfaces\IRestfulTranslator;
 
-use UserGroup\Model\NullUserGroup;
-use UserGroup\Utils\ObjectGenerate;
+use Sdk\UserGroup\Model\NullUserGroup;
+use Sdk\UserGroup\Utils\ObjectGenerate;
 
 class UserGroupRestfulAdapterTest extends TestCase
 {
@@ -27,7 +26,7 @@ class UserGroupRestfulAdapterTest extends TestCase
                 return parent::getResource();
             }
 
-            public function getTranslator(): ITranslator
+            public function getTranslator(): IRestfulTranslator
             {
                 return parent::getTranslator();
             }
@@ -48,7 +47,7 @@ class UserGroupRestfulAdapterTest extends TestCase
     public function testCorrectInstanceImplementsUserGroupAdapter()
     {
         $this->assertInstanceof(
-            'UserGroup\Adapter\UserGroup\IUserGroupAdapter',
+            'Sdk\UserGroup\Adapter\UserGroup\IUserGroupAdapter',
             $this->stub
         );
     }
@@ -61,7 +60,7 @@ class UserGroupRestfulAdapterTest extends TestCase
     public function testGetTransltor()
     {
         $this->assertInstanceOf(
-            'Marmot\Framework\Interfaces\ITranslator',
+            'Marmot\Framework\Interfaces\IRestfulTranslator',
             $this->childStub->getTranslator()
         );
     }

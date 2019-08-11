@@ -1,11 +1,12 @@
 <?php
-namespace UserGroup\Translator;
+namespace Sdk\UserGroup\Translator;
 
-use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use UserGroup\Model\UserGroup;
-use UserGroup\Translator\UserGroupRestfulTranslator;
+use Sdk\UserGroup\Model\UserGroup;
+use Sdk\UserGroup\Utils\ArrayGenerate;
+use Sdk\UserGroup\Utils\ObjectGenerate;
+use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class UserGroupRestfulTranslatorTest extends TestCase
 {
@@ -19,12 +20,12 @@ class UserGroupRestfulTranslatorTest extends TestCase
     public function testArrayToObjectIncorrectObject()
     {
         $result = $this->translator->arrayToObject(array(), new UserGroup());
-        $this->assertInstanceOf('UserGroup\Model\NullUserGroup', $result);
+        $this->assertInstanceOf('Sdk\UserGroup\Model\NullUserGroup', $result);
     }
 
     public function testArrayToObjectCorrectObject()
     {
-        $userGroup = \UserGroup\Utils\ArrayGenerate::generateUserGroup();
+        $userGroup = ArrayGenerate::generateUserGroup();
 
         $data = $userGroup['data'];
 
@@ -43,7 +44,7 @@ class UserGroupRestfulTranslatorTest extends TestCase
 
     public function testArrayToObjectsOneCorrectObject()
     {
-        $userGroup = \UserGroup\Utils\ArrayGenerate::generateUserGroup();
+        $userGroup = ArrayGenerate::generateUserGroup();
 
         $data =  $userGroup['data'];
 
@@ -58,8 +59,8 @@ class UserGroupRestfulTranslatorTest extends TestCase
 
     public function testArrayToObjectsCorrectObject()
     {
-        $userGroup[] = \UserGroup\Utils\ArrayGenerate::generateUserGroup(5);
-        $userGroup[] = \UserGroup\Utils\ArrayGenerate::generateUserGroup(6);
+        $userGroup[] = ArrayGenerate::generateUserGroup(5);
+        $userGroup[] = ArrayGenerate::generateUserGroup(6);
 
         $userGroupArray= array('data'=>array(
             $userGroup[0]['data'],
@@ -121,7 +122,7 @@ class UserGroupRestfulTranslatorTest extends TestCase
      */
     public function testObjectToArrayCorrectObject()
     {
-        $userGroup = \UserGroup\Utils\ObjectGenerate::generateUserGroup(1, 1);
+        $userGroup = ObjectGenerate::generateUserGroup(1, 1);
 
         $actual = $this->translator->objectToArray($userGroup);
 

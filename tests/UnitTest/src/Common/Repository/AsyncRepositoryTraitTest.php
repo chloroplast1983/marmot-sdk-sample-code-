@@ -1,5 +1,5 @@
 <?php
-namespace Common\Repository;
+namespace Sdk\Common\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
@@ -13,11 +13,7 @@ class AsyncRepositoryTraitTest extends TestCase
     public function setUp()
     {
         $this->stub = $this->getMockBuilder(TestAsyncRepository::class)
-            ->setMethods(
-                [
-                    'getAdapter'
-                ]
-            )->getMock();
+                    ->setMethods(['getAdapter'])->getMock();
     }
 
     public function tearDown()
@@ -31,7 +27,6 @@ class AsyncRepositoryTraitTest extends TestCase
 
         $adapter = $this->prophesize(IAsyncAdapter::class);
         $adapter->fetchOneAsync(Argument::exact($id))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());
@@ -46,7 +41,6 @@ class AsyncRepositoryTraitTest extends TestCase
 
         $adapter = $this->prophesize(IAsyncAdapter::class);
         $adapter->fetchListAsync(Argument::exact($ids))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());
@@ -69,7 +63,6 @@ class AsyncRepositoryTraitTest extends TestCase
             Argument::exact($number),
             Argument::exact($size)
         )->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());

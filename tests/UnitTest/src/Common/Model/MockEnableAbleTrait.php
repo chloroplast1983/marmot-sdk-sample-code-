@@ -1,7 +1,7 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
-use Common\Adapter\IEnableAbleAdapter;
+use Sdk\Common\Adapter\IEnableAbleAdapter;
 
 class MockEnableAbleTrait implements IEnableAble
 {
@@ -22,6 +22,7 @@ class MockEnableAbleTrait implements IEnableAble
             {
                 return false;
             }
+            
             public function disable(IEnableAble $enableAbleObject) : bool
             {
                 return false;

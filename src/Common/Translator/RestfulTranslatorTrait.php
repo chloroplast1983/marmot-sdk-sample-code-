@@ -1,5 +1,5 @@
 <?php
-namespace Common\Translator;
+namespace Sdk\Common\Translator;
 
 trait RestfulTranslatorTrait
 {

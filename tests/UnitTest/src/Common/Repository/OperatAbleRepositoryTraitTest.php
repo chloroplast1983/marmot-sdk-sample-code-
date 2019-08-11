@@ -1,10 +1,11 @@
 <?php
-namespace Common\Repository;
+namespace Sdk\Common\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Common\Adapter\IOperatAbleAdapter;
+use Sdk\News\Utils\ObjectGenerate;
+use Sdk\Common\Adapter\IOperatAbleAdapter;
 
 class OperatAbleRepositoryTraitTest extends TestCase
 {
@@ -13,11 +14,7 @@ class OperatAbleRepositoryTraitTest extends TestCase
     public function setUp()
     {
         $this->stub = $this->getMockBuilder(TestOperatAbleRepository::class)
-            ->setMethods(
-                [
-                    'getAdapter'
-                ]
-            )->getMock();
+            ->setMethods(['getAdapter'])->getMock();
     }
 
     public function tearDown()
@@ -27,11 +24,10 @@ class OperatAbleRepositoryTraitTest extends TestCase
 
     public function testAdd()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $adapter = $this->prophesize(IOperatAbleAdapter::class);
         $adapter->add(Argument::exact($news))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());
@@ -42,11 +38,10 @@ class OperatAbleRepositoryTraitTest extends TestCase
 
     public function testEdit()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $adapter = $this->prophesize(IOperatAbleAdapter::class);
         $adapter->edit(Argument::exact($news))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());

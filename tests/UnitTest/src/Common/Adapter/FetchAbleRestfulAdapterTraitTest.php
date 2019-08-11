@@ -1,7 +1,10 @@
 <?php
-namespace Common\Adapter;
+namespace Sdk\Common\Adapter;
 
 use PHPUnit\Framework\TestCase;
+
+use Sdk\News\Utils\ArrayGenerate;
+use Sdk\News\Utils\ObjectGenerate;
 
 class FetchAbleRestfulAdapterTraitTest extends TestCase
 {
@@ -28,15 +31,15 @@ class FetchAbleRestfulAdapterTraitTest extends TestCase
     {
         $ids = array(1,2,3);
         $news = array(
-                \News\Utils\ObjectGenerate::generateNews(1),
-                \News\Utils\ObjectGenerate::generateNews(2),
-                \News\Utils\ObjectGenerate::generateNews(3),
+            ObjectGenerate::generateNews(1),
+            ObjectGenerate::generateNews(2),
+            ObjectGenerate::generateNews(3),
             );
 
         $newsArray = array(
-            \News\Utils\ArrayGenerate::generateNews(1),
-            \News\Utils\ArrayGenerate::generateNews(2),
-            \News\Utils\ArrayGenerate::generateNews(3),
+            ArrayGenerate::generateNews(1),
+            ArrayGenerate::generateNews(2),
+            ArrayGenerate::generateNews(3),
         );
 
         $this->stub->expects($this->exactly(1))
@@ -61,9 +64,9 @@ class FetchAbleRestfulAdapterTraitTest extends TestCase
         $ids = array(1,2,3);
 
         $newsArray = array(
-            \News\Utils\ArrayGenerate::generateNews(1),
-            \News\Utils\ArrayGenerate::generateNews(2),
-            \News\Utils\ArrayGenerate::generateNews(3),
+            ArrayGenerate::generateNews(1),
+            ArrayGenerate::generateNews(2),
+            ArrayGenerate::generateNews(3),
         );
 
         $this->stub->expects($this->exactly(1))
@@ -88,16 +91,17 @@ class FetchAbleRestfulAdapterTraitTest extends TestCase
         $sort = array();
         $page = 0;
         $size = 10;
+        
         $news = array(
-            \News\Utils\ObjectGenerate::generateNews(1),
-            \News\Utils\ObjectGenerate::generateNews(2),
-            \News\Utils\ObjectGenerate::generateNews(3),
+            ObjectGenerate::generateNews(1),
+            ObjectGenerate::generateNews(2),
+            ObjectGenerate::generateNews(3),
         );
 
         $newsArray = array(
-            \News\Utils\ArrayGenerate::generateNews(1),
-            \News\Utils\ArrayGenerate::generateNews(2),
-            \News\Utils\ArrayGenerate::generateNews(3),
+            ArrayGenerate::generateNews(1),
+            ArrayGenerate::generateNews(2),
+            ArrayGenerate::generateNews(3),
         );
 
         $this->stub->expects($this->exactly(1))
@@ -125,9 +129,9 @@ class FetchAbleRestfulAdapterTraitTest extends TestCase
         $size = 10;
 
         $newsArray = array(
-            \News\Utils\ArrayGenerate::generateNews(1),
-            \News\Utils\ArrayGenerate::generateNews(2),
-            \News\Utils\ArrayGenerate::generateNews(3),
+            ArrayGenerate::generateNews(1),
+            ArrayGenerate::generateNews(2),
+            ArrayGenerate::generateNews(3),
         );
 
         $this->stub->expects($this->exactly(1))

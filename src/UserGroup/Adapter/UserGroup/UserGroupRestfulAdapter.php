@@ -1,15 +1,15 @@
 <?php
-namespace UserGroup\Adapter\UserGroup;
+namespace Sdk\UserGroup\Adapter\UserGroup;
 
 use Marmot\Core;
-use Marmot\Framework\Interfaces\ITranslator;
+use Marmot\Framework\Interfaces\IRestfulTranslator;
 use Marmot\Framework\Adapter\Restful\GuzzleAdapter;
 
-use Common\Adapter\FetchAbleRestfulAdapterTrait;
-use Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
+use Sdk\Common\Adapter\FetchAbleRestfulAdapterTrait;
+use Sdk\Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
 
-use UserGroup\Model\NullUserGroup;
-use UserGroup\Translator\UserGroupRestfulTranslator;
+use Sdk\UserGroup\Model\NullUserGroup;
+use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class UserGroupRestfulAdapter extends GuzzleAdapter implements IUserGroupAdapter
 {
@@ -37,7 +37,7 @@ class UserGroupRestfulAdapter extends GuzzleAdapter implements IUserGroupAdapter
         $this->resource = 'userGroups';
     }
 
-    protected function getTranslator() : ITranslator
+    protected function getTranslator() : IRestfulTranslator
     {
         return $this->translator;
     }

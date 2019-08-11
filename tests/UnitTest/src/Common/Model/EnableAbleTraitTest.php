@@ -1,10 +1,10 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Common\Adapter\IEnableAbleAdapter;
+use Sdk\Common\Adapter\IEnableAbleAdapter;
 
 class EnableAbleTraitTest extends TestCase
 {
@@ -28,6 +28,7 @@ class EnableAbleTraitTest extends TestCase
     public function testSetStatus($actural, $expected)
     {
         $this->trait->setStatus($actural);
+
         $result = $this->trait->getStatus();
         $this->assertEquals($expected, $result);
     }
@@ -47,7 +48,6 @@ class EnableAbleTraitTest extends TestCase
 
         $enableAdapter = $this->prophesize(IEnableAbleAdapter::class);
         $enableAdapter->enable(Argument::exact($this->trait))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->trait->expects($this->exactly(1))
             ->method('getIEnableAbleAdapter')
             ->willReturn($enableAdapter->reveal());
@@ -70,7 +70,6 @@ class EnableAbleTraitTest extends TestCase
 
         $enableAdapter = $this->prophesize(IEnableAbleAdapter::class);
         $enableAdapter->disable(Argument::exact($this->trait))->shouldBeCalledTimes(1)->willReturn(true);
-
         $this->trait->expects($this->exactly(1))
             ->method('getIEnableAbleAdapter')
             ->willReturn($enableAdapter->reveal());

@@ -1,5 +1,5 @@
 <?php
-namespace UserGroup\Model;
+namespace Sdk\UserGroup\Model;
 
 use Marmot\Framework\Interfaces\INull;
 

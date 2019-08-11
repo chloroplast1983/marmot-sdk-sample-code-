@@ -1,5 +1,5 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -22,6 +22,7 @@ class NullOperatAbleTraitTest extends TestCase
     public function testAdd()
     {
         $this->mockResourceNotExist();
+
         $result = $this->trait->add();
         $this->assertFalse($result);
     }
@@ -29,6 +30,7 @@ class NullOperatAbleTraitTest extends TestCase
     public function testEdit()
     {
         $this->mockResourceNotExist();
+        
         $result = $this->trait->edit();
         $this->assertFalse($result);
     }

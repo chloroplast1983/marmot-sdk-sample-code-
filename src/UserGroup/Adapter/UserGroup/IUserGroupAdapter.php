@@ -1,7 +1,7 @@
 <?php
-namespace UserGroup\Adapter\UserGroup;
+namespace Sdk\UserGroup\Adapter\UserGroup;
 
-use Common\Adapter\IFetchAbleAdapter;
+use Sdk\Common\Adapter\IFetchAbleAdapter;
 
 use Marmot\Framework\Interfaces\IAsyncAdapter;
 

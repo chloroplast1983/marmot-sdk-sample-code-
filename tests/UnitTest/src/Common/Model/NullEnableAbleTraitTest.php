@@ -1,5 +1,5 @@
 <?php
-namespace Common\Model;
+namespace Sdk\Common\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -22,6 +22,7 @@ class NullEnableAbleTraitTest extends TestCase
     public function testEnable()
     {
         $this->mockResourceNotExist();
+
         $result = $this->trait->enable();
         $this->assertFalse($result);
     }
@@ -29,6 +30,7 @@ class NullEnableAbleTraitTest extends TestCase
     public function testDsiable()
     {
         $this->mockResourceNotExist();
+
         $result = $this->trait->disable();
         $this->assertFalse($result);
     }
@@ -36,6 +38,7 @@ class NullEnableAbleTraitTest extends TestCase
     public function testIsEnabled()
     {
         $this->mockResourceNotExist();
+
         $result = $this->trait->isEnabled();
         $this->assertFalse($result);
     }
@@ -43,6 +46,7 @@ class NullEnableAbleTraitTest extends TestCase
     public function testIsDisabled()
     {
         $this->mockResourceNotExist();
+        
         $result = $this->trait->isDisabled();
         $this->assertFalse($result);
     }

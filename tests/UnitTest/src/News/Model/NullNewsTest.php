@@ -1,7 +1,8 @@
 <?php
-namespace News\Model;
+namespace Sdk\News\Model;
 
 use Marmot\Core;
+
 use PHPUnit\Framework\TestCase;
 
 class NullNewsTest extends TestCase
@@ -22,7 +23,7 @@ class NullNewsTest extends TestCase
 
     public function testExtendsNews()
     {
-        $this->assertInstanceof('News\Model\News', $this->stub);
+        $this->assertInstanceof('Sdk\News\Model\News', $this->stub);
     }
 
     public function testImplementsNull()

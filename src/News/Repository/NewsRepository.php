@@ -1,14 +1,13 @@
 <?php
-namespace News\Repository;
+namespace Sdk\News\Repository;
 
-use Common\Repository\AsyncRepositoryTrait;
-use Common\Repository\FetchRepositoryTrait;
-use Common\Repository\EnableAbleRepositoryTrait;
-use Common\Repository\OperatAbleRepositoryTrait;
+use Sdk\Common\Repository\AsyncRepositoryTrait;
+use Sdk\Common\Repository\FetchRepositoryTrait;
+use Sdk\Common\Repository\EnableAbleRepositoryTrait;
+use Sdk\Common\Repository\OperatAbleRepositoryTrait;
 
-use News\Adapter\News\INewsAdapter;
-use News\Adapter\News\NewsRestfulAdapter;
-use News\Model\News;
+use Sdk\News\Adapter\News\INewsAdapter;
+use Sdk\News\Adapter\News\NewsRestfulAdapter;
 
 class NewsRepository implements INewsAdapter
 {

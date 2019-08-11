@@ -1,5 +1,5 @@
 <?php
-namespace UserGroup\Model;
+namespace Sdk\UserGroup\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -19,7 +19,7 @@ class NullUserGroupTest extends TestCase
 
     public function testExtendsUserGroup()
     {
-        $this->assertInstanceof('UserGroup\Model\UserGroup', $this->stub);
+        $this->assertInstanceof('Sdk\UserGroup\Model\UserGroup', $this->stub);
     }
 
     public function testImplementsNull()

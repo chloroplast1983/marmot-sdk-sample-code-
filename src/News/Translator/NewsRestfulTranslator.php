@@ -1,16 +1,16 @@
 <?php
-namespace News\Translator;
+namespace Sdk\News\Translator;
 
-use Marmot\Framework\Interfaces\ITranslator;
+use Marmot\Framework\Interfaces\IRestfulTranslator;
 
-use Common\Translator\RestfulTranslatorTrait;
+use Sdk\Common\Translator\RestfulTranslatorTrait;
 
-use News\Model\News;
-use News\Model\NullNews;
+use Sdk\News\Model\News;
+use Sdk\News\Model\NullNews;
 
-use UserGroup\Translator\UserGroupRestfulTranslator;
+use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
-class NewsRestfulTranslator implements ITranslator
+class NewsRestfulTranslator implements IRestfulTranslator
 {
     use RestfulTranslatorTrait;
 

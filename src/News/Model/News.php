@@ -1,20 +1,20 @@
 <?php
-namespace News\Model;
+namespace Sdk\News\Model;
 
 use Marmot\Core;
 use Marmot\Common\Model\Object;
 use Marmot\Common\Model\IObject;
 
-use Common\Model\IEnableAble;
-use Common\Model\IOperatAble;
-use Common\Model\EnableAbleTrait;
-use Common\Model\OperatAbleTrait;
-use Common\Adapter\IEnableAbleAdapter;
-use Common\Adapter\IOperatAbleAdapter;
+use Sdk\Common\Model\IEnableAble;
+use Sdk\Common\Model\IOperatAble;
+use Sdk\Common\Model\EnableAbleTrait;
+use Sdk\Common\Model\OperatAbleTrait;
+use Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sdk\Common\Adapter\IOperatAbleAdapter;
 
-use UserGroup\Model\UserGroup;
+use Sdk\UserGroup\Model\UserGroup;
 
-use News\Repository\NewsRepository;
+use Sdk\News\Repository\NewsRepository;
 
 class News implements IEnableAble, IOperatAble, IObject
 {
@@ -44,8 +44,7 @@ class News implements IEnableAble, IOperatAble, IObject
         $this->content = '';
         $this->attachments = array();
         $this->image = array();
-        $this->publishUserGroup = Core::$container->has('user')
-            ? Core::$container->get('user')->getUserGroup() : new UserGroup();
+        $this->publishUserGroup = new UserGroup();
         $this->statusTime = 0;
         $this->createTime = 0;
         $this->updateTime = 0;

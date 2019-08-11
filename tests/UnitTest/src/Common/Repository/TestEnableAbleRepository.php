@@ -1,5 +1,5 @@
 <?php
-namespace Common\Repository;
+namespace Sdk\Common\Repository;
 
 class TestEnableAbleRepository
 {

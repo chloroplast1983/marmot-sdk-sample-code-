@@ -1,10 +1,12 @@
 <?php
-namespace Common\Repository;
+namespace Sdk\Common\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Common\Adapter\IFetchAbleAdapter;
+use Sdk\News\Utils\ObjectGenerate;
+
+use Sdk\Common\Adapter\IFetchAbleAdapter;
 
 class FetchRepositoryTraitTest extends TestCase
 {
@@ -13,11 +15,7 @@ class FetchRepositoryTraitTest extends TestCase
     public function setUp()
     {
         $this->stub = $this->getMockBuilder(TestFetchRepository::class)
-            ->setMethods(
-                [
-                    'getAdapter'
-                ]
-            )->getMock();
+                    ->setMethods(['getAdapter'])->getMock();
     }
 
     public function tearDown()
@@ -28,11 +26,10 @@ class FetchRepositoryTraitTest extends TestCase
     public function testFetchOne()
     {
         $id = 1;
-        $news = \News\Utils\ObjectGenerate::generateNews($id);
+        $news = ObjectGenerate::generateNews($id);
 
         $adapter = $this->prophesize(IFetchAbleAdapter::class);
         $adapter->fetchOne(Argument::exact($id))->shouldBeCalledTimes(1)->willReturn($news);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());
@@ -45,12 +42,12 @@ class FetchRepositoryTraitTest extends TestCase
     {
         $ids = [1,2,3];
         $news = array(
-            \News\Utils\ObjectGenerate::generateNews(1),\News\Utils\ObjectGenerate::generateNews(2)
+            ObjectGenerate::generateNews(1),
+            ObjectGenerate::generateNews(2)
         );
 
         $adapter = $this->prophesize(IFetchAbleAdapter::class);
         $adapter->fetchList(Argument::exact($ids))->shouldBeCalledTimes(1)->willReturn($news);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());
@@ -67,7 +64,8 @@ class FetchRepositoryTraitTest extends TestCase
         $size = 10;
 
         $news = array(
-            \News\Utils\ObjectGenerate::generateNews(1),\News\Utils\ObjectGenerate::generateNews(2)
+            ObjectGenerate::generateNews(1),
+            ObjectGenerate::generateNews(2)
         );
 
         $adapter = $this->prophesize(IFetchAbleAdapter::class);
@@ -77,7 +75,6 @@ class FetchRepositoryTraitTest extends TestCase
             Argument::exact($number),
             Argument::exact($size)
         )->shouldBeCalledTimes(1)->willReturn($news);
-
         $this->stub->expects($this->exactly(1))
             ->method('getAdapter')
             ->willReturn($adapter->reveal());

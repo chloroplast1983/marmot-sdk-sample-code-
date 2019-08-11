@@ -1,10 +1,10 @@
 <?php
-namespace Common\Adapter;
+namespace Sdk\Common\Adapter;
 
-use News\Translator\NewsRestfulTranslator;
-use Common\Model\IEnableAble;
 use PHPUnit\Framework\TestCase;
-use Prophecy\Argument;
+
+use Sdk\Common\Model\IEnableAble;
+use Sdk\News\Utils\ObjectGenerate;
 
 class EnableAbleRestfulAdapterTraitTest extends TestCase
 {
@@ -49,7 +49,7 @@ class EnableAbleRestfulAdapterTraitTest extends TestCase
 
     public function testEnableSuccess()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $url = 'news/'.$news->getId().'/enable';
 
@@ -65,7 +65,7 @@ class EnableAbleRestfulAdapterTraitTest extends TestCase
     
     public function testEnableFailure()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $url = 'news/'.$news->getId().'/enable';
 
@@ -80,7 +80,7 @@ class EnableAbleRestfulAdapterTraitTest extends TestCase
 
     public function testDisableSuccess()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $url = 'news/'.$news->getId().'/disable';
 
@@ -96,7 +96,7 @@ class EnableAbleRestfulAdapterTraitTest extends TestCase
 
     public function testDisableFailure()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1);
+        $news = ObjectGenerate::generateNews(1);
 
         $url = 'news/'.$news->getId().'/disable';
 

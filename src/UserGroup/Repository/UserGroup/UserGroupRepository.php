@@ -1,11 +1,11 @@
 <?php
-namespace UserGroup\Repository\UserGroup;
+namespace Sdk\UserGroup\Repository\UserGroup;
 
-use Common\Repository\AsyncRepositoryTrait;
-use Common\Repository\FetchRepositoryTrait;
+use Sdk\Common\Repository\AsyncRepositoryTrait;
+use Sdk\Common\Repository\FetchRepositoryTrait;
 
-use UserGroup\Adapter\UserGroup\IUserGroupAdapter;
-use UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter;
+use Sdk\UserGroup\Adapter\UserGroup\IUserGroupAdapter;
+use Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter;
 
 class UserGroupRepository implements IUserGroupAdapter
 {

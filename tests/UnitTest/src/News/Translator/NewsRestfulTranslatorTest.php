@@ -1,13 +1,15 @@
 <?php
-namespace News\Translator;
+namespace Sdk\News\Translator;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use News\Model\News;
+use Sdk\News\Model\News;
+use Sdk\News\Utils\ArrayGenerate;
+use Sdk\News\Utils\ObjectGenerate;
 
-use UserGroup\Model\UserGroup;
-use UserGroup\Translator\UserGroupRestfulTranslator;
+use Sdk\UserGroup\Model\UserGroup;
+use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class NewsRestfulTranslatorTest extends TestCase
 {
@@ -33,7 +35,7 @@ class NewsRestfulTranslatorTest extends TestCase
     public function testGetUserGroupRestfulTranslator()
     {
         $this->assertInstanceOf(
-            'UserGroup\Translator\UserGroupRestfulTranslator',
+            'Sdk\UserGroup\Translator\UserGroupRestfulTranslator',
             $this->childTranslator->getUserGroupRestfulTranslator()
         );
     }
@@ -41,12 +43,12 @@ class NewsRestfulTranslatorTest extends TestCase
     public function testArrayToObjectIncorrectObject()
     {
         $result = $this->translator->arrayToObject(array(), new News());
-        $this->assertInstanceOf('News\Model\NullNews', $result);
+        $this->assertInstanceOf('Sdk\News\Model\NullNews', $result);
     }
 
     public function testArrayToObjectCorrectObject()
     {
-        $news = \News\Utils\ArrayGenerate::generateNews();
+        $news = ArrayGenerate::generateNews();
 
         $data =  $news['data'];
         $relationships = $data['relationships'];
@@ -56,7 +58,6 @@ class NewsRestfulTranslatorTest extends TestCase
         $userGroupRestfulTranslator->arrayToObject(
             Argument::exact($relationships['publishUserGroup'])
         )->shouldBeCalledTimes(1)->willReturn($userGroup);
-
         $this->translator->expects($this->exactly(1))
             ->method('getUserGroupRestfulTranslator')
             ->willReturn($userGroupRestfulTranslator->reveal());
@@ -76,7 +77,7 @@ class NewsRestfulTranslatorTest extends TestCase
 
     public function testArrayToObjectsOneCorrectObject()
     {
-        $news = \News\Utils\ArrayGenerate::generateNews();
+        $news = ArrayGenerate::generateNews();
         $data =  $news['data'];
         $relationships = $data['relationships'];
 
@@ -85,7 +86,6 @@ class NewsRestfulTranslatorTest extends TestCase
         $userGroupRestfulTranslator->arrayToObject(
             Argument::exact($relationships['publishUserGroup'])
         )->shouldBeCalledTimes(1)->willReturn($userGroup);
-
         $this->translator->expects($this->exactly(1))
             ->method('getUserGroupRestfulTranslator')
             ->willReturn($userGroupRestfulTranslator->reveal());
@@ -102,8 +102,8 @@ class NewsRestfulTranslatorTest extends TestCase
 
     public function testArrayToObjectsCorrectObject()
     {
-        $news[] = \News\Utils\ArrayGenerate::generateNews(1);
-        $news[] = \News\Utils\ArrayGenerate::generateNews(2);
+        $news[] = ArrayGenerate::generateNews(1);
+        $news[] = ArrayGenerate::generateNews(2);
 
         $newsArray= array('data'=>array(
             $news[0]['data'],
@@ -202,7 +202,7 @@ class NewsRestfulTranslatorTest extends TestCase
      */
     public function testObjectToArrayCorrectObject()
     {
-        $news = \News\Utils\ObjectGenerate::generateNews(1, 1);
+        $news = ObjectGenerate::generateNews(1, 1);
 
         $actual = $this->translator->objectToArray($news);
 
