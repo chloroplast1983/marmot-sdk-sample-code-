@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\UserGroup\Model;
+namespace Sample\Sdk\UserGroup\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -19,11 +19,11 @@ class NullUserGroupTest extends TestCase
 
     public function testExtendsUserGroup()
     {
-        $this->assertInstanceof('Sdk\UserGroup\Model\UserGroup', $this->stub);
+        $this->assertInstanceof('Sample\Sdk\UserGroup\Model\UserGroup', $this->stub);
     }
 
     public function testImplementsNull()
     {
-        $this->assertInstanceof('Marmot\Framework\Interfaces\INull', $this->stub);
+        $this->assertInstanceof('Marmot\Interfaces\INull', $this->stub);
     }
 }

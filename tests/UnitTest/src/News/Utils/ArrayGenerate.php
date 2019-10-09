@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\News\Utils;
+namespace Sample\Sdk\News\Utils;
 
-use Sdk\News\Model\News;
+use Sample\Sdk\News\Model\News;
 
 class ArrayGenerate
 {

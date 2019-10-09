@@ -1,10 +1,10 @@
 <?php
-namespace Sdk\UserGroup\Repository\UserGroup;
+namespace Sample\Sdk\UserGroup\Repository\UserGroup;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter;
+use Sample\Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter;
 
 class UserGroupRepositoryTest extends TestCase
 {
@@ -36,7 +36,7 @@ class UserGroupRepositoryTest extends TestCase
     public function testGetAdapter()
     {
         $this->assertInstanceOf(
-            'Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter',
+            'Sample\Sdk\UserGroup\Adapter\UserGroup\UserGroupRestfulAdapter',
             $this->childStub->getAdapter()
         );
     }

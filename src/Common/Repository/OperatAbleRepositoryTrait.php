@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\Common\Repository;
+namespace Sample\Sdk\Common\Repository;
 
-use Sdk\Common\Model\IOperatAble;
+use Sample\Sdk\Common\Model\IOperatAble;
 
 trait OperatAbleRepositoryTrait
 {

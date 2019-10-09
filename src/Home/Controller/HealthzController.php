@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\Home\Controller;
+namespace Sample\Sdk\Home\Controller;
 
 use Marmot\Framework\Classes\Controller;
 use Marmot\Framework\Controller\JsonApiTrait;
@@ -13,7 +13,7 @@ class HealthzController extends Controller
 
     public function healthz()
     {
-        echo "ok1";
+        echo "ok";
         return true;
     }
 }

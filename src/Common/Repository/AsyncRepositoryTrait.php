@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\Common\Repository;
+namespace Sample\Sdk\Common\Repository;
 
-use Marmot\Framework\Interfaces\IAsyncAdapter;
+use Marmot\Interfaces\IAsyncAdapter;
 
 trait AsyncRepositoryTrait
 {

@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\Common\Adapter;
+namespace Sample\Sdk\Common\Adapter;
 
-use Marmot\Framework\Interfaces\INull;
+use Marmot\Interfaces\INull;
 
 trait FetchAbleRestfulAdapterTrait
 {

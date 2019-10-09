@@ -1,10 +1,10 @@
 <?php
-namespace Sdk\Common\Model;
+namespace Sample\Sdk\Common\Model;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sample\Sdk\Common\Adapter\IEnableAbleAdapter;
 
 class EnableAbleTraitTest extends TestCase
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\Common\Repository;
+namespace Sample\Sdk\Common\Repository;
 
 trait FetchRepositoryTrait
 {

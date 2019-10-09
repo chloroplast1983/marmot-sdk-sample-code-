@@ -1,15 +1,15 @@
 <?php
-namespace Sdk\News\Adapter\News;
+namespace Sample\Sdk\News\Adapter\News;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Marmot\Framework\Interfaces\IRestfulTranslator;
+use Marmot\Interfaces\IRestfulTranslator;
 
-use Sdk\News\Model\News;
-use Sdk\News\Model\NullNews;
-use Sdk\News\Utils\ObjectGenerate;
-use Sdk\News\Translator\NewsRestfulTranslator;
+use Sample\Sdk\News\Model\News;
+use Sample\Sdk\News\Model\NullNews;
+use Sample\Sdk\News\Utils\ObjectGenerate;
+use Sample\Sdk\News\Translator\NewsRestfulTranslator;
 
 class NewsRestfulAdapterTest extends TestCase
 {
@@ -57,7 +57,7 @@ class NewsRestfulAdapterTest extends TestCase
     public function testImplementsINewsAdapter()
     {
         $this->assertInstanceOf(
-            'Sdk\News\Adapter\News\INewsAdapter',
+            'Sample\Sdk\News\Adapter\News\INewsAdapter',
             $this->stub
         );
     }
@@ -70,7 +70,7 @@ class NewsRestfulAdapterTest extends TestCase
     public function testGetTranslator()
     {
         $this->assertInstanceOf(
-            'Marmot\Framework\Interfaces\IRestfulTranslator',
+            'Marmot\Interfaces\IRestfulTranslator',
             $this->childStub->getTranslator()
         );
     }

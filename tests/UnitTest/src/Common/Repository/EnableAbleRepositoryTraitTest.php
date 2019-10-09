@@ -1,12 +1,12 @@
 <?php
-namespace Sdk\Common\Repository;
+namespace Sample\Sdk\Common\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Sdk\News\Utils\ObjectGenerate;
+use Sample\Sdk\News\Utils\ObjectGenerate;
 
-use Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sample\Sdk\Common\Adapter\IEnableAbleAdapter;
 
 class EnableAbleRepositoryTraitTest extends TestCase
 {

@@ -1,15 +1,15 @@
 <?php
-namespace Sdk\News\Translator;
+namespace Sample\Sdk\News\Translator;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Sdk\News\Model\News;
-use Sdk\News\Utils\ArrayGenerate;
-use Sdk\News\Utils\ObjectGenerate;
+use Sample\Sdk\News\Model\News;
+use Sample\Sdk\News\Utils\ArrayGenerate;
+use Sample\Sdk\News\Utils\ObjectGenerate;
 
-use Sdk\UserGroup\Model\UserGroup;
-use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
+use Sample\Sdk\UserGroup\Model\UserGroup;
+use Sample\Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class NewsRestfulTranslatorTest extends TestCase
 {
@@ -35,7 +35,7 @@ class NewsRestfulTranslatorTest extends TestCase
     public function testGetUserGroupRestfulTranslator()
     {
         $this->assertInstanceOf(
-            'Sdk\UserGroup\Translator\UserGroupRestfulTranslator',
+            'Sample\Sdk\UserGroup\Translator\UserGroupRestfulTranslator',
             $this->childTranslator->getUserGroupRestfulTranslator()
         );
     }
@@ -43,7 +43,7 @@ class NewsRestfulTranslatorTest extends TestCase
     public function testArrayToObjectIncorrectObject()
     {
         $result = $this->translator->arrayToObject(array(), new News());
-        $this->assertInstanceOf('Sdk\News\Model\NullNews', $result);
+        $this->assertInstanceOf('Sample\Sdk\News\Model\NullNews', $result);
     }
 
     public function testArrayToObjectCorrectObject()

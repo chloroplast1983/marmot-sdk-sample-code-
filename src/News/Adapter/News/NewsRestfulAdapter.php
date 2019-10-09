@@ -1,18 +1,18 @@
 <?php
-namespace Sdk\News\Adapter\News;
+namespace Sample\Sdk\News\Adapter\News;
 
 use Marmot\Core;
-use Marmot\Framework\Interfaces\IRestfulTranslator;
+use Marmot\Interfaces\IRestfulTranslator;
 use Marmot\Framework\Adapter\Restful\GuzzleAdapter;
 
-use Sdk\Common\Adapter\EnableAbleRestfulAdapterTrait;
-use Sdk\Common\Adapter\FetchAbleRestfulAdapterTrait;
-use Sdk\Common\Adapter\OperatAbleRestfulAdapterTrait;
-use Sdk\Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
+use Sample\Sdk\Common\Adapter\EnableAbleRestfulAdapterTrait;
+use Sample\Sdk\Common\Adapter\FetchAbleRestfulAdapterTrait;
+use Sample\Sdk\Common\Adapter\OperatAbleRestfulAdapterTrait;
+use Sample\Sdk\Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
 
-use Sdk\News\Model\News;
-use Sdk\News\Model\NullNews;
-use Sdk\News\Translator\NewsRestfulTranslator;
+use Sample\Sdk\News\Model\News;
+use Sample\Sdk\News\Model\NullNews;
+use Sample\Sdk\News\Translator\NewsRestfulTranslator;
 
 class NewsRestfulAdapter extends GuzzleAdapter implements INewsAdapter
 {
@@ -39,10 +39,11 @@ class NewsRestfulAdapter extends GuzzleAdapter implements INewsAdapter
         ]
     ];
     
-    public function __construct()
+    public function __construct(string $uri, array $authKey)
     {
         parent::__construct(
-            Core::$container->get('services.backend.url')
+            $uri,
+            $authKey
         );
         $this->translator = new NewsRestfulTranslator();
         $this->resource = 'news';

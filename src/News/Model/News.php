@@ -1,20 +1,20 @@
 <?php
-namespace Sdk\News\Model;
+namespace Sample\Sdk\News\Model;
 
 use Marmot\Core;
 use Marmot\Common\Model\Object;
 use Marmot\Common\Model\IObject;
 
-use Sdk\Common\Model\IEnableAble;
-use Sdk\Common\Model\IOperatAble;
-use Sdk\Common\Model\EnableAbleTrait;
-use Sdk\Common\Model\OperatAbleTrait;
-use Sdk\Common\Adapter\IEnableAbleAdapter;
-use Sdk\Common\Adapter\IOperatAbleAdapter;
+use Sample\Sdk\Common\Model\IEnableAble;
+use Sample\Sdk\Common\Model\IOperatAble;
+use Sample\Sdk\Common\Model\EnableAbleTrait;
+use Sample\Sdk\Common\Model\OperatAbleTrait;
+use Sample\Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sample\Sdk\Common\Adapter\IOperatAbleAdapter;
 
-use Sdk\UserGroup\Model\UserGroup;
+use Sample\Sdk\UserGroup\Model\UserGroup;
 
-use Sdk\News\Repository\NewsRepository;
+use Sample\Sdk\News\Repository\NewsRepository;
 
 class News implements IEnableAble, IOperatAble, IObject
 {

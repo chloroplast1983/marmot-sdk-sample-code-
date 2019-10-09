@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\Common\Adapter;
+namespace Sample\Sdk\Common\Adapter;
 
 use PHPUnit\Framework\TestCase;
 

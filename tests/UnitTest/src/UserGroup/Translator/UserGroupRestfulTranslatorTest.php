@@ -1,12 +1,12 @@
 <?php
-namespace Sdk\UserGroup\Translator;
+namespace Sample\Sdk\UserGroup\Translator;
 
 use PHPUnit\Framework\TestCase;
 
-use Sdk\UserGroup\Model\UserGroup;
-use Sdk\UserGroup\Utils\ArrayGenerate;
-use Sdk\UserGroup\Utils\ObjectGenerate;
-use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
+use Sample\Sdk\UserGroup\Model\UserGroup;
+use Sample\Sdk\UserGroup\Utils\ArrayGenerate;
+use Sample\Sdk\UserGroup\Utils\ObjectGenerate;
+use Sample\Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class UserGroupRestfulTranslatorTest extends TestCase
 {
@@ -20,7 +20,7 @@ class UserGroupRestfulTranslatorTest extends TestCase
     public function testArrayToObjectIncorrectObject()
     {
         $result = $this->translator->arrayToObject(array(), new UserGroup());
-        $this->assertInstanceOf('Sdk\UserGroup\Model\NullUserGroup', $result);
+        $this->assertInstanceOf('Sample\Sdk\UserGroup\Model\NullUserGroup', $result);
     }
 
     public function testArrayToObjectCorrectObject()

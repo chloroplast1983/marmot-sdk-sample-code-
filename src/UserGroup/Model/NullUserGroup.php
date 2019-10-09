@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\UserGroup\Model;
+namespace Sample\Sdk\UserGroup\Model;
 
-use Marmot\Framework\Interfaces\INull;
+use Marmot\Interfaces\INull;
 
 class NullUserGroup extends UserGroup implements INull
 {

@@ -1,10 +1,11 @@
 <?php
-namespace Sdk\UserGroup\Adapter\UserGroup;
+namespace Sample\Sdk\UserGroup\Adapter\UserGroup;
 
-use Sdk\Common\Adapter\IFetchAbleAdapter;
+use Sample\Sdk\Common\Adapter\IFetchAbleAdapter;
 
-use Marmot\Framework\Interfaces\IAsyncAdapter;
+use Marmot\Interfaces\IAsyncAdapter;
+use Marmot\Interfaces\IErrorAdapter;
 
-interface IUserGroupAdapter extends IFetchAbleAdapter, IAsyncAdapter
+interface IUserGroupAdapter extends IFetchAbleAdapter, IAsyncAdapter, IErrorAdapter
 {
 }

@@ -1,15 +1,15 @@
 <?php
-namespace Sdk\UserGroup\Adapter\UserGroup;
+namespace Sample\Sdk\UserGroup\Adapter\UserGroup;
 
 use Marmot\Core;
-use Marmot\Framework\Interfaces\IRestfulTranslator;
+use Marmot\Interfaces\IRestfulTranslator;
 use Marmot\Framework\Adapter\Restful\GuzzleAdapter;
 
-use Sdk\Common\Adapter\FetchAbleRestfulAdapterTrait;
-use Sdk\Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
+use Sample\Sdk\Common\Adapter\FetchAbleRestfulAdapterTrait;
+use Sample\Sdk\Common\Adapter\AsyncFetchAbleRestfulAdapterTrait;
 
-use Sdk\UserGroup\Model\NullUserGroup;
-use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
+use Sample\Sdk\UserGroup\Model\NullUserGroup;
+use Sample\Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class UserGroupRestfulAdapter extends GuzzleAdapter implements IUserGroupAdapter
 {
@@ -27,10 +27,11 @@ class UserGroupRestfulAdapter extends GuzzleAdapter implements IUserGroupAdapter
         ]
     ];
     
-    public function __construct()
+    public function __construct(string $uri, array $authKey)
     {
         parent::__construct(
-            Core::$container->get('services.backend.url')
+            $uri,
+            $authKey
         );
         $this->translator = new UserGroupRestfulTranslator();
         $this->scenario = array();

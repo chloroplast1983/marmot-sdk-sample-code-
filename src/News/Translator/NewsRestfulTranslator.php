@@ -1,14 +1,14 @@
 <?php
-namespace Sdk\News\Translator;
+namespace Sample\Sdk\News\Translator;
 
-use Marmot\Framework\Interfaces\IRestfulTranslator;
+use Marmot\Interfaces\IRestfulTranslator;
 
-use Sdk\Common\Translator\RestfulTranslatorTrait;
+use Sample\Sdk\Common\Translator\RestfulTranslatorTrait;
 
-use Sdk\News\Model\News;
-use Sdk\News\Model\NullNews;
+use Sample\Sdk\News\Model\News;
+use Sample\Sdk\News\Model\NullNews;
 
-use Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
+use Sample\Sdk\UserGroup\Translator\UserGroupRestfulTranslator;
 
 class NewsRestfulTranslator implements IRestfulTranslator
 {

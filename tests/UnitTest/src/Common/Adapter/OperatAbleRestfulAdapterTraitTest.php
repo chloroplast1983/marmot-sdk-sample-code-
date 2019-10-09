@@ -1,9 +1,9 @@
 <?php
-namespace Sdk\Common\Adapter;
+namespace Sample\Sdk\Common\Adapter;
 
 use PHPUnit\Framework\TestCase;
 
-use Sdk\News\Utils\ObjectGenerate;
+use Sample\Sdk\News\Utils\ObjectGenerate;
 
 class OperatAbleRestfulAdapterTraitTest extends TestCase
 {

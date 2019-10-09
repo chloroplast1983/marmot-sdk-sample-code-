@@ -7,5 +7,4 @@ cache/proxies/*.php
 public/index.php
 config.test.php
 src/Application.php
-Core.php
 docs/UnitTestCover

@@ -1,10 +1,10 @@
 <?php
-namespace Sdk\Common\Repository;
+namespace Sample\Sdk\Common\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Marmot\Framework\Interfaces\IAsyncAdapter;
+use Marmot\Interfaces\IAsyncAdapter;
 
 class AsyncRepositoryTraitTest extends TestCase
 {

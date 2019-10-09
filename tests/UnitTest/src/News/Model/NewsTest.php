@@ -1,16 +1,16 @@
 <?php
-namespace Sdk\News\Model;
+namespace Sample\Sdk\News\Model;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Sdk\News\Repository\NewsRepository;
+use Sample\Sdk\News\Repository\NewsRepository;
 
-use Sdk\Common\Model\IEnableAble;
-use Sdk\Common\Adapter\IEnableAbleAdapter;
-use Sdk\Common\Adapter\IOperatAbleAdapter;
+use Sample\Sdk\Common\Model\IEnableAble;
+use Sample\Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sample\Sdk\Common\Adapter\IOperatAbleAdapter;
 
-use Sdk\UserGroup\Model\UserGroup;
+use Sample\Sdk\UserGroup\Model\UserGroup;
 
 class NewsTest extends TestCase
 {
@@ -68,17 +68,17 @@ class NewsTest extends TestCase
         $this->assertEquals(0, $this->stub->getCreateTime());
         $this->assertEquals(0, $this->stub->getUpdateTime());
         $this->assertEquals(0, $this->stub->getStatusTime());
-        $this->assertInstanceof('Sdk\UserGroup\Model\UserGroup', $this->stub->getPublishUserGroup());
+        $this->assertInstanceof('Sample\Sdk\UserGroup\Model\UserGroup', $this->stub->getPublishUserGroup());
     }
 
     public function testCorrectImplementsIEnableAble()
     {
-        $this->assertInstanceof('Sdk\Common\Model\IEnableAble', $this->stub);
+        $this->assertInstanceof('Sample\Sdk\Common\Model\IEnableAble', $this->stub);
     }
 
     public function testCorrectImplementsIOperatAble()
     {
-        $this->assertInstanceof('Sdk\Common\Model\IOperatAble', $this->stub);
+        $this->assertInstanceof('Sample\Sdk\Common\Model\IOperatAble', $this->stub);
     }
 
     public function testCorrectImplementsIObject()
@@ -227,7 +227,7 @@ class NewsTest extends TestCase
     public function testGetRepository()
     {
         $this->assertInstanceOf(
-            'Sdk\News\Repository\NewsRepository',
+            'Sample\Sdk\News\Repository\NewsRepository',
             $this->childStub->getRepository()
         );
     }
@@ -235,7 +235,7 @@ class NewsTest extends TestCase
     public function testGetIEnableAbleAdapter()
     {
         $this->assertInstanceOf(
-            'Sdk\Common\Adapter\IEnableAbleAdapter',
+            'Sample\Sdk\Common\Adapter\IEnableAbleAdapter',
             $this->childStub->getIEnableAbleAdapter()
         );
     }
@@ -243,7 +243,7 @@ class NewsTest extends TestCase
     public function testGetIOperatAbleAdapter()
     {
         $this->assertInstanceOf(
-            'Sdk\Common\Adapter\IOperatAbleAdapter',
+            'Sample\Sdk\Common\Adapter\IOperatAbleAdapter',
             $this->childStub->getIOperatAbleAdapter()
         );
     }

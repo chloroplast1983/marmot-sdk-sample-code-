@@ -1,10 +1,10 @@
 <?php
-namespace Sdk\Common\Adapter;
+namespace Sample\Sdk\Common\Adapter;
 
 use PHPUnit\Framework\TestCase;
 
-use Sdk\Common\Model\IEnableAble;
-use Sdk\News\Utils\ObjectGenerate;
+use Sample\Sdk\Common\Model\IEnableAble;
+use Sample\Sdk\News\Utils\ObjectGenerate;
 
 class EnableAbleRestfulAdapterTraitTest extends TestCase
 {

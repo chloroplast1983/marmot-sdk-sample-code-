@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\Common\Model;
+namespace Sample\Sdk\Common\Model;
 
 trait NullOperatAbleTrait
 {

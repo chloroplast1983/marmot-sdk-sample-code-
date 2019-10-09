@@ -1,12 +1,12 @@
 <?php
-namespace Sdk\UserGroup\Translator;
+namespace Sample\Sdk\UserGroup\Translator;
 
-use Sdk\Common\Translator\RestfulTranslatorTrait;
+use Sample\Sdk\Common\Translator\RestfulTranslatorTrait;
 
-use Marmot\Framework\Interfaces\IRestfulTranslator;
+use Marmot\Interfaces\IRestfulTranslator;
 
-use Sdk\UserGroup\Model\UserGroup;
-use Sdk\UserGroup\Model\NullUserGroup;
+use Sample\Sdk\UserGroup\Model\UserGroup;
+use Sample\Sdk\UserGroup\Model\NullUserGroup;
 
 class UserGroupRestfulTranslator implements IRestfulTranslator
 {

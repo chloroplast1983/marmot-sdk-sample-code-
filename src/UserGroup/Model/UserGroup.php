@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\UserGroup\Model;
+namespace Sample\Sdk\UserGroup\Model;
 
 use Marmot\Common\Model\Object;
 use Marmot\Common\Model\IObject;

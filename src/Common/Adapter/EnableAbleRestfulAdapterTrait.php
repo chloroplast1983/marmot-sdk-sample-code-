@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\Common\Adapter;
+namespace Sample\Sdk\Common\Adapter;
 
-use Sdk\Common\Model\IEnableAble;
+use Sample\Sdk\Common\Model\IEnableAble;
 
 trait EnableAbleRestfulAdapterTrait
 {

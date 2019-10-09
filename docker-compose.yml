@@ -6,4 +6,6 @@ phpfpm:
    - SYS_PTRACE
   environment:
    - APP_ENV=dev
+  external_links:
+   - "backend-sample-nginx"
   container_name: sdk-sample-phpfpm

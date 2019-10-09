@@ -1,7 +1,7 @@
 <?php
-namespace Sdk\UserGroup\Utils;
+namespace Sample\Sdk\UserGroup\Utils;
 
-use Sdk\UserGroup\Model\UserGroup;
+use Sample\Sdk\UserGroup\Model\UserGroup;
 
 class ObjectGenerate
 {

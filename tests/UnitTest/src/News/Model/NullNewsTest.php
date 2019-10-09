@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\News\Model;
+namespace Sample\Sdk\News\Model;
 
 use Marmot\Core;
 
@@ -23,12 +23,12 @@ class NullNewsTest extends TestCase
 
     public function testExtendsNews()
     {
-        $this->assertInstanceof('Sdk\News\Model\News', $this->stub);
+        $this->assertInstanceof('Sample\Sdk\News\Model\News', $this->stub);
     }
 
     public function testImplementsNull()
     {
-        $this->assertInstanceof('Marmot\Framework\Interfaces\INull', $this->stub);
+        $this->assertInstanceof('Marmot\Interfaces\INull', $this->stub);
     }
 
     public function testAdd()

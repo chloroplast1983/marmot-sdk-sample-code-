@@ -1,12 +1,13 @@
 <?php
-namespace Sdk\News\Adapter\News;
+namespace Sample\Sdk\News\Adapter\News;
 
-use Sdk\Common\Adapter\IEnableAbleAdapter;
-use Sdk\Common\Adapter\IFetchAbleAdapter;
-use Sdk\Common\Adapter\IOperatAbleAdapter;
+use Sample\Sdk\Common\Adapter\IEnableAbleAdapter;
+use Sample\Sdk\Common\Adapter\IFetchAbleAdapter;
+use Sample\Sdk\Common\Adapter\IOperatAbleAdapter;
 
-use Marmot\Framework\Interfaces\IAsyncAdapter;
+use Marmot\Interfaces\IAsyncAdapter;
+use Marmot\Interfaces\IErrorAdapter;
 
-interface INewsAdapter extends IEnableAbleAdapter, IFetchAbleAdapter, IOperatAbleAdapter, IAsyncAdapter
+interface INewsAdapter extends IEnableAbleAdapter, IFetchAbleAdapter, IOperatAbleAdapter, IAsyncAdapter, IErrorAdapter
 {
 }

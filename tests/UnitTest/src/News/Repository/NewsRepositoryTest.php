@@ -1,10 +1,10 @@
 <?php
-namespace Sdk\News\Repository;
+namespace Sample\Sdk\News\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;
 
-use Sdk\News\Adapter\News\NewsRestfulAdapter;
+use Sample\Sdk\News\Adapter\News\NewsRestfulAdapter;
 
 class NewsRepositoryTest extends TestCase
 {
@@ -34,7 +34,7 @@ class NewsRepositoryTest extends TestCase
     public function testGetAdapter()
     {
         $this->assertInstanceOf(
-            'Sdk\News\Adapter\News\NewsRestfulAdapter',
+            'Sample\Sdk\News\Adapter\News\NewsRestfulAdapter',
             $this->childStub->getAdapter()
         );
     }

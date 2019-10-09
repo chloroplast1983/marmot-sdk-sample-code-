@@ -1,5 +1,5 @@
 <?php
-namespace Sdk\UserGroup\Model;
+namespace Sample\Sdk\UserGroup\Model;
 
 use PHPUnit\Framework\TestCase;
 
