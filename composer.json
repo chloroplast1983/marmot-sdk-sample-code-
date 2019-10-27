@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "chloroplast/monkey-framework": "dev-dev"
+        "chloroplast/monkey-framework": "dev-master"
     },
     "require-dev": {
         "chloroplast/marmot-dev-pacakges": "dev-master"

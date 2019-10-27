@@ -1,5 +1,5 @@
 <?php
-namespace Sample\Sdk\UserGroup\Repository\UserGroup;
+namespace Sample\Sdk\UserGroup\Repository;
 
 use Prophecy\Argument;
 use PHPUnit\Framework\TestCase;

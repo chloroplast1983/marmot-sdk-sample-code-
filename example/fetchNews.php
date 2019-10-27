@@ -2,12 +2,14 @@
 include '../vendor/autoload.php';
 require '../Core.php';
 
+use Sample\Sdk\UserGroup\Repository\UserGroupRepository;
+
 $core = Marmot\Core::getInstance();
 $core->initCli();
 
-$sdk = new Sample\Sdk\Sdk('http://backend-sample-nginx/', array());
+$userGroupResitory = new UserGroupRepository();
 
-$userGroup = $sdk->userGroupResitory()->fetchOne(1);
+$userGroup = $userGroupResitory->fetchOne(1);
 var_dump($userGroup);
 
 // $userGroup = $sdk->userGroupResitory()->fetchOne(0);

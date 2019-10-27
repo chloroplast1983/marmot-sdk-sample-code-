@@ -10,20 +10,26 @@ use Sample\Sdk\Common\Repository\ErrorRepositoryTrait;
 use Sample\Sdk\News\Adapter\News\INewsAdapter;
 use Sample\Sdk\News\Adapter\News\NewsRestfulAdapter;
 
+use Marmot\Core;
+
 class NewsRepository implements INewsAdapter
 {
-    use FetchRepositoryTrait, AsyncRepositoryTrait, EnableAbleRepositoryTrait, OperatAbleRepositoryTrait, ErrorRepositoryTrait;
+    use FetchRepositoryTrait,
+        AsyncRepositoryTrait,
+        EnableAbleRepositoryTrait,
+        OperatAbleRepositoryTrait,
+        ErrorRepositoryTrait;
 
     private $adapter;
 
     const LIST_MODEL_UN = 'NEWS_LIST';
     const FETCH_ONE_MODEL_UN = 'NEWS_FETCH_ONE';
 
-    public function __construct(string $uri, array $authKey)
+    public function __construct(string $uri = '', array $authKey = [])
     {
         $this->adapter = new NewsRestfulAdapter(
-            $uri,
-            $authKey
+            Core::$container->has('sdk.url') ? Core::$container->get('sdk.url') : ’‘,
+            Core::$container->has('sdk.authKey') ? Core::$container->get('sdk.authKey') : ’‘
         );
     }
 

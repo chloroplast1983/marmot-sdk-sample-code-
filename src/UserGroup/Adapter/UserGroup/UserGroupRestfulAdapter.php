@@ -27,7 +27,7 @@ class UserGroupRestfulAdapter extends GuzzleAdapter implements IUserGroupAdapter
         ]
     ];
     
-    public function __construct(string $uri, array $authKey)
+    public function __construct(string $uri = '', array $authKey = [])
     {
         parent::__construct(
             $uri,

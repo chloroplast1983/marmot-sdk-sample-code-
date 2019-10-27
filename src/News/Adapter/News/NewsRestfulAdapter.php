@@ -39,7 +39,7 @@ class NewsRestfulAdapter extends GuzzleAdapter implements INewsAdapter
         ]
     ];
     
-    public function __construct(string $uri, array $authKey)
+    public function __construct(string $uri = '', array $authKey = [])
     {
         parent::__construct(
             $uri,

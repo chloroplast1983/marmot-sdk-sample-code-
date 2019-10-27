@@ -27,7 +27,8 @@ class NewsRestfulAdapterTest extends TestCase
                 'patch',
                 'translateToObject',
                 'getTranslator'
-            ])->getMock();
+            ])
+            ->getMock();
 
         $this->childStub = new class extends NewsRestfulAdapter
         {
