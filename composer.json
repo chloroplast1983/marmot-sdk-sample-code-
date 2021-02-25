@@ -13,10 +13,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "chloroplast/monkey-framework": "dev-master"
+        "composer/installers": "~1.0",
+        "chloroplast/monkey-framework": ">=1.0.0"
     },
     "require-dev": {
-        "chloroplast/marmot-dev-pacakges": "dev-master"
+       "chloroplast/marmot-dev-pacakges": ">=1.0.0",
     },
     "repositories": {
         "packagist": {
@@ -27,6 +28,7 @@
     "autoload": {
         "psr-4": {
             "Sample\\Sdk\\": "src"
-        }
+        },
+         "files": ["src/errorConfig.php", "src/errorDescriptionConfig.php"]
     }
 }
