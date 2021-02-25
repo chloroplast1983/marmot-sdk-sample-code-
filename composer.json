@@ -17,7 +17,7 @@
         "chloroplast/monkey-framework": ">=1.0.0"
     },
     "require-dev": {
-       "chloroplast/marmot-dev-pacakges": ">=1.0.0",
+       "chloroplast/marmot-dev-pacakges": ">=1.0.0"
     },
     "repositories": {
         "packagist": {
